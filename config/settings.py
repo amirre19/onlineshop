@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'persian_jalali.apps.PersianJalaliConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 
 
 ]
@@ -203,3 +204,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 # crispy forms settings
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
