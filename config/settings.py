@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'rosetta',
     'jalali_date',
     'ckeditor',
+    'phonenumber_field',
+    
 
 
     # local apps
@@ -61,7 +63,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
-    'persian_jalali.apps.PersianJalaliConfig'
+    'persian_jalali.apps.PersianJalaliConfig',
+    'orders.apps.OrdersConfig',
 
 
 ]

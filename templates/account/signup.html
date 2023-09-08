@@ -1,12 +1,48 @@
 {% extends '_base.html' %}
 
 {% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+
 
 {% block page_tittle %}
     Sign up
 {% endblock %}
 
 {% block content %}
+
+
+{% comment %} <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+  </head>
+  <body>
+    
+    <section>
+         
+      <div class="signup-box">
+        <form action=""  method="post">
+              <h2>sign up</h2>
+              {% csrf_token %}
+              {{ form|crispy }}
+              <button class="btn btn-success" type="submit">Sign Up</button>
+              <div class="register-link">
+                <p>have an account:<a href="#">Login</a>
+                </p>
+              </div>
+        </form>
+      </div>
+    </section>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
+</html> {% endcomment %}
+
 <h1>Sign up</h1>
 
 <form action="" method="post">
