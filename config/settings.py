@@ -44,16 +44,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.humanize',
+
     # third party apps
     'crispy_forms',
     'crispy_bootstrap4',
     'allauth',
     'allauth.account',
+    'rosetta',
+    'jalali_date',
+    'ckeditor',
+
 
     # local apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
+    'persian_jalali.apps.PersianJalaliConfig'
 
 
 ]
@@ -83,6 +91,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Custom Context Processors
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -138,6 +148,11 @@ EMAIL_BACKENDS = 'django.core.mail.backends.console.EmailBackend'
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
 TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
@@ -154,6 +169,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 # Default primary key field type
